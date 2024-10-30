@@ -20,33 +20,34 @@ using namespace std;
 class CardFactory{
 
     public:
+            int top = 0; 
     CardFactory(){
-        Card deckToBe[104];
-        int top = 0; 
+        Card* deckToBe[104];
+
         for(int i = 0; i < 104; i++){
             if(top < 20){
                 deckToBe[i] = new Blue(); 
             }
             else if (top >= 20 && top <38){
-                deckToBe[i] = new Card<Chili>; 
+                deckToBe[i] = new Chili(); 
             }
             else if (top >= 38 && top <54){
-                deckToBe[i] = new Card<Stink>; 
+                deckToBe[i] = new Stink(); 
             }
             else if (top >= 54 && top <68){
-                deckToBe[i] = new Card<Green>; 
+                deckToBe[i] = new Green(); 
             }
             else if (top >= 68 && top <80){
-                deckToBe[i] = new Card<soy>; 
+                deckToBe[i] = new soy(); 
             }
             else if (top >= 80 && top <90){
-                deckToBe[i] = new Card<black>; 
+                deckToBe[i] = new black(); 
             }
             else if (top >= 90 && top <98){
-                deckToBe[i] = new Card<Red>; 
+                deckToBe[i] = new Red(); 
             }
             else{
-                deckToBe[i] = new Card<garden>; 
+                deckToBe[i] = new garden(); 
             }
             top++; 
         }

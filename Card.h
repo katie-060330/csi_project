@@ -8,15 +8,14 @@ class Card{
     
     virtual int getCardsPerCoin(int coins); 
     virtual string getName();
+    virtual int getRank();//*not sure if we want this or not TBD
     virtual void print(ostream& out); //ostream printing out emuns
 };
 
 class Blue: public Card{
-     const int rank;
+    int rank = 8;
     public:
-    Blue()rank(8){
-        const rank = 8;  
-    }
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 4; 
@@ -34,6 +33,9 @@ class Blue: public Card{
     virtual string getName(){
         return "Blue"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"B";
 
@@ -43,7 +45,9 @@ class Blue: public Card{
 };
 
 class Chili: public Card{
+    int rank =7; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 3; 
@@ -61,6 +65,9 @@ class Chili: public Card{
     virtual string getName(){
         return "Chili"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"C";
 
@@ -69,7 +76,9 @@ class Chili: public Card{
 
 };
 class Stink: public Card{
+    int rank = 6; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 3; 
@@ -87,6 +96,9 @@ class Stink: public Card{
     virtual string getName(){
         return "Stink"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"S";
 
@@ -95,7 +107,9 @@ class Stink: public Card{
 
 };
 class Green: public Card{
+    int rank = 5; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 3; 
@@ -113,6 +127,9 @@ class Green: public Card{
     virtual string getName(){
         return "Green"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"G";
 
@@ -121,7 +138,9 @@ class Green: public Card{
 
 };
 class soy: public Card{
+    int rank = 4; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 2; 
@@ -139,6 +158,9 @@ class soy: public Card{
     virtual string getName(){
         return "soy"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"s";
 
@@ -147,7 +169,9 @@ class soy: public Card{
 
 };
 class black: public Card{
+    int rank = 3; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 2; 
@@ -165,6 +189,9 @@ class black: public Card{
     virtual string getName(){
         return "black"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"b";
 
@@ -173,7 +200,10 @@ class black: public Card{
 
 };
 class Red: public Card{
+    int rank = 2; 
+    
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 2; 
@@ -191,6 +221,9 @@ class Red: public Card{
     virtual string getName(){
         return "Red"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"R";
 
@@ -199,7 +232,9 @@ class Red: public Card{
 
 };
 class garden: public Card{
+    int rank = 1; 
     public:
+
     virtual int getCardsPerCoin(int coins){
         if(coins == 1){
             return 0; //!maybe 0??? maybe null
@@ -217,6 +252,9 @@ class garden: public Card{
     virtual string getName(){
         return "garden"; 
    }
+       virtual int getRank(){
+        return rank; 
+    }
    virtual void print(ostream& out){ //?
     out<<"g";
 
