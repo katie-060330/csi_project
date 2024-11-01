@@ -1,4 +1,4 @@
 #include <iostream>
-class Chain_Base {
+class Chain_Base<T> {
     
 };
