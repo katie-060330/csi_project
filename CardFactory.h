@@ -54,9 +54,11 @@ class CardFactory{
 
 
     }
+    // Deck CardFactory::getDeck(){
+
+    // }
     
 };
 
 
 
-//function Deck getDeck() shuffls and returns all 104 beans
