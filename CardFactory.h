@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Card.h"
+#include "Deck.h"
 
 
 // ??not sure if this is a class or not im conused with the bean classes 
@@ -20,10 +21,11 @@ using namespace std;
 class CardFactory{
 
     public:
-            int top = 0; 
+    int top = 0;  
+    //TODO have a deck to sore all of the cards
+    //TODO have an instance of CardFactory to return in the getCardFactory function 
+    static Card *CardFactory::deckToBe[104];
     CardFactory(){
-        Card* deckToBe[104];
-
         for(int i = 0; i < 104; i++){
             if(top < 20){
                 deckToBe[i] = new Blue(); 
@@ -54,9 +56,13 @@ class CardFactory{
 
 
     }
-    // Deck CardFactory::getDeck(){
 
-    // }
+    static CardFactory* CardFactory::getCardFactory(){
+        return deckToBe; 
+    }
+    Deck CardFactory::getDeck(){
+        return NULL; 
+    }
     
 };
 
