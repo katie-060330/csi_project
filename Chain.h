@@ -3,7 +3,7 @@
 #include <vector>
 
 template<typename T> class Chain{
-    Chain chian; 
+    //?How do we hold the chain, in an array list??
     public:
     Chain<typename T>(istream& is, const CardFactory* cFactory){
         //?Chain(istream&, const CardFactory*) is a constructor which accepts an 
@@ -17,6 +17,10 @@ template<typename T> class Chain{
     int sell(){
         
 
+    }
+
+    friend ostream& operator<<(ostream& out, const CardFactory*){
+        
     }
 
 };
