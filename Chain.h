@@ -18,11 +18,16 @@ template<typename T> class Chain{
 
     }
     int sell(){
-        
+        //!ask about this function
 
     }
 
+    //not sure about this
     friend ostream& operator<<(ostream& out){
+        out<< chain[0].getName(); 
+        for(int i = 0; i < chain.size(); i++){
+            out<<chain[0].print(); 
+        }
         
     }
 
