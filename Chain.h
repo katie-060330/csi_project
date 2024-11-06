@@ -8,11 +8,13 @@ template<typename T> class Chain{
     //!work on this in relation to chain_base, how do these class and interface interact wiht each other
     vector<Card*> chian;
     public:
-    Chain<typename T>(istream& is, const CardFactory* cFactory){
+    Chain<typename T>(istream& in, const CardFactory* cFactory){
         //?Chain(istream&, const CardFactory*) is a constructor which accepts an 
 //?istream and reconstructs the chain from file when a game is resumed. 
         
-        chain.push_back(cin.get(is));
+        //* gets the input and pushes it into the vector chain
+
+        chain.push_back(cin.get(in));
     }
     Chain<T>& operator+=(Card* card){
 

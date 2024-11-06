@@ -6,7 +6,7 @@ using namespace std;
 
 // ??not sure if this is a class or not im conused with the bean classes 
 
-//! constructor witj all cards needed
+//! constructor with all cards needed
 //?20 instances of blue
 //18 chilli
 //16 stink

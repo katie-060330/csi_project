@@ -6,6 +6,7 @@ class Card{
     int rank;
     public:
     
+    //! Do we need a constructor for this class??
     virtual int getCardsPerCoin(int coins); 
     virtual string getName();
     virtual int getRank();//*not sure if we want this or not TBD
