@@ -7,10 +7,17 @@ class Card{
     public:
     
     //! Do we need a constructor for this class??
+    virtual ~Card() = 0;
     virtual int getCardsPerCoin(int coins); 
     virtual string getName();
     virtual int getRank();//*not sure if we want this or not TBD
     virtual void print(ostream& out); //ostream printing out emuns
+    
+    //global virtial friend function insertion opperator 
+    friend ostream& operator<<(ostream& out, Card& card){
+        card.print(out); 
+        return out; 
+    }
 };
 
 class Blue: public Card{
