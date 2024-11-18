@@ -24,6 +24,8 @@ class CardFactory{
     int top = 0;  
     //TODO have a deck to sore all of the cards
     //TODO have an instance of CardFactory to return in the getCardFactory function 
+
+    //?WHat is this deleraton??
     static Card *CardFactory::deckToBe[104];
     CardFactory(){
         for(int i = 0; i < 104; i++){

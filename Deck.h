@@ -9,6 +9,9 @@ class Deck{
     public:
     std::vector<Card> deck; 
     Deck(istream& in, const CardFactory* cardFactory){
+
+
+        
         deck.insert()
         //?do we remove what is in the input from the cardFactory and put it into the deck??
 

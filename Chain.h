@@ -15,8 +15,8 @@ class Chain<typename T> : public Card{
 //?istream and reconstructs the chain from file when a game is resumed. 
         
         //* gets the input and pushes it into the vector chain
-
         chain.push_back(cin.get(in));
+        
     }
     Chain<T>& operator+=(Card* card){
         //*returns a refrence of chain after adding the card to the chain 
