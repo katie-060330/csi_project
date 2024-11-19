@@ -5,6 +5,7 @@ using namespace std;
 #include "Card.h"
 #include "Deck.h"
 #include <vector>
+#include <String>
 
 
 //function static CardFactory* getFactory() returns a pointer to the only instance of card factory
@@ -27,7 +28,7 @@ class CardFactory{
 
 
     Deck getDeck();
-    
+    Card* getCard(string cardType);
 };
 
 

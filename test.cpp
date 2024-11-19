@@ -4,6 +4,8 @@
 
 
 int main(){
-    garden g; 
-    std::cout<<g.getRank(); 
+
+    Card<"Blue"> b = new Blue(); 
+
+    return 0; 
 }

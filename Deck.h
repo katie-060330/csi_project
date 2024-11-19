@@ -4,6 +4,7 @@
 #include "CardFactory.h"
 #include <vector> 
 #include <iostream>
+#include <String>
 //! go to lab 5 to suffel deck 
 
 class Deck{
