@@ -2,9 +2,10 @@
 #include "Card.h"
 #include "CardFactory.h"
 #include <vector>
+#include "IllegalType.h"
 
-
-template<typename T> class Chain{
+//The template Chain will have to be instantiated in the program by the concrete derived card classes, e.g., 
+class Chain<typename T> : public Card{
     //!work on this in relation to chain_base, how do these class and interface interact wiht each other
     vector<Card*> chain;
     public:
@@ -13,8 +14,8 @@ template<typename T> class Chain{
 //?istream and reconstructs the chain from file when a game is resumed. 
         
         //* gets the input and pushes it into the vector chain
-
         chain.push_back(cin.get(in));
+        
     }
 
 
@@ -37,7 +38,7 @@ template<typename T> class Chain{
         //type of the chain, then count the amount of cards in the chain
         // and sell accordingly
         //! stupid
-
+        return 0;
     }
 
     //not sure about this
@@ -46,6 +47,7 @@ template<typename T> class Chain{
         for(int i = 0; i < chain.size(); i++){
             out<<chain[0].print(); 
         }
+        return out; 
         
     }
 
