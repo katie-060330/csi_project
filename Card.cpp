@@ -1,15 +1,23 @@
 
 #include "Card.h"
-
+#include <stdexcept>
 
 int Blue::getCardsPerCoin(int coins) {
     if(coins == 1){return 4; }
            else if (coins == 2){ return 6; }
            else if(coins == 3){ return 8;}
            else if (coins == 4){  return 10; }
-           else{
-                return -1;
-           }
+    else{ throw std::invalid_argument("Coins cannot have values other than 1, 2, 3, 4");}
+    }
+
+int Blue::getCoinsPerCard(int cards) {
+        if(cards <4 && cards>=0){return 0;}
+        else if(cards==4 || cards==5){return 1; }
+           else if (cards<=7 && cards>5){ return 2; }
+           else if(cards>7 && cards<=9){ return 3;}
+           else if (cards>9 && cards <=20){  return 4; }
+    else {throw std::invalid_argument("Only 20 Blue cards in deck");}
+
     }
 
 
@@ -28,10 +36,19 @@ void Blue::print(ostream& out) {
 
 int Chili::getCardsPerCoin(int coins) {
      if(coins == 1){ return 3;  }
-            else if (coins == 2){return 6; }
+            else if(coins == 2){return 6; }
             else if(coins == 3){  return 8; }
-            else{  return 9;}
+            else if(coins==4) {  return 9;}
+      else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
 }
+int Chili::getCoinsPerCard(int cards) {
+    if(cards <3 &&cards>=0){return 0;}
+        else if(cards<=5 && cards>=3){return 1; }
+           else if (cards<=7 && cards>5){ return 2; }
+           else if(cards==8){ return 3;}
+           else  if(cards>=9 && cards <=18 ){  return 4; }
+            else{throw std::invalid_argument( "Only 18 Chili cards in deck" );}
+    }
 
 string Chili::getName() {
     return "Chili";
@@ -50,8 +67,18 @@ int Stink::getCardsPerCoin(int coins) {
     if(coins == 1){return 3; }
             else if (coins == 2){ return 5; }
             else if(coins == 3){ return 7; }
-            else{  return 8; }
+            else if(coins==4){  return 8; }
+ else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
 }
+int Stink::getCoinsPerCard(int cards) {
+    if(cards <3&&cards >=0){return 0;}
+        else if(cards==4 || cards==3){return 1; }
+           else if (cards<=7 && cards>5){ return 2; }
+           else if(cards==8){ return 3;}
+           else if (cards>=9 && cards <=16){  return 4; }
+
+            else{throw std::invalid_argument( "Only 16 stink cards in deck" );}
+    }
 
 string Stink::getName() {
     return "Stink";
@@ -70,8 +97,20 @@ int Green::getCardsPerCoin(int coins) {
     if(coins == 1){ return 3; }
            else if (coins == 2){ return 5; }
            else if(coins == 3){return 6; }
-           else{return 7;}
+           else if (coins ==4) {return 7;}
+           else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
 }
+
+int Green::getCoinsPerCard(int cards) {
+    if(cards <3&& cards>=0){return 0;}
+        else if(cards==4 || cards==3){return 1; }
+           else if (cards==5){ return 2; }
+           else if(cards==6){ return 3;}
+           else if (cards>=7 && cards <=14){  return 4; }
+
+            else{throw std::invalid_argument( "Only 14 green cards in deck" );}
+    }
+
 string Green::getName(){
         return "Green";
    }
@@ -87,8 +126,19 @@ void Green::print(ostream& out){
         if(coins == 1){return 2;}
                else if (coins == 2){ return 4;  }
                else if(coins == 3){return 6; }
-               else{ return 7;}
+               else if (coins ==4){ return 7;}
+      else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
    }
+   int Soy::getCoinsPerCard(int cards) {
+       if(cards <2 && cards>=0){return 0;}
+       else if(cards==2 || cards==3){return 1; }
+       else if (cards==5 || cards==4){ return 2; }
+       else if(cards==6){ return 3;}
+       else if(cards>=7 && cards <=12){  return 4; }
+       //not enought cards in teh deck to make a chain
+       else{throw std::invalid_argument( "Only 12 soy cards in deck" );}
+       }
+
    string Soy::getName(){
            return "Soy";
       }
@@ -104,8 +154,18 @@ void Green::print(ostream& out){
           if(coins == 1){return 2;}
                  else if (coins == 2){return 4;}
                  else if(coins == 3){  return 5;}
-                 else{ return 6;   }
+                 else if (coins ==4){ return 6;   }
+             else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
     }
+    int Black::getCoinsPerCard(int cards) {
+           if(cards < 2 && cards>=0){return 0;}
+               else if(cards==2 || cards==3){return 1; }
+                  else if (cards==4){ return 2; }
+                  else if(cards==5){ return 3;}
+                  else if (cards>=6 && cards <=10){  return 4; }
+
+                   else{throw std::invalid_argument( "Only 10 Black cards in deck & there cant be negatives" );}
+           }
 
     string Black::getName() {
         return "Black";
@@ -124,8 +184,18 @@ void Green::print(ostream& out){
               if(coins == 1){return 2;}
                       else if (coins == 2){return 3;}
                       else if(coins == 3){return 4;}
-                      else{return 5;}
+                      else if (coins ==4) {return 5;}
+     else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
         }
+         int Red::getCoinsPerCard(int cards) {
+                   if(cards < 2 && cards>=0){return 0;}
+                       else if(cards==2){return 1; }
+                          else if (cards==3){ return 2; }
+                          else if(cards==4){ return 3;}
+                          else if (cards==5 && cards <=8){  return 4; }
+
+                           else{throw std::invalid_argument( "Only 10 Black cards in deck & there cant be negatives" );}
+                   }
 
         string Red::getName() {
             return "Red";
@@ -143,8 +213,19 @@ void Green::print(ostream& out){
                  if(coins == 1) { return 0; }
                      else if (coins == 2) { return 2; }
                      else if(coins == 3) { return 3; }
-                     else { return 0; }
+                     else if(coins==4) { return 0; }
+                    else{throw std::invalid_argument( "Coins cannot have values other than 1,2,3,4" );}
+
             }
+    int Garden::getCoinsPerCard(int cards){
+    //not enougth cards to get coins
+        if(cards <2 && cards>=0){return 0;}
+               else if(cards==2){return 2; }
+               else if (cards==3){ return 3; }
+               //not enought cards in teh deck to make a chain
+               else{throw std::invalid_argument( "Only 6 garden cards in deck" );}
+    }
+
 
             string Garden::getName() {
                 return "Garden";
@@ -158,258 +239,3 @@ void Green::print(ostream& out){
                 out << "g";
             }
 
-
-
-/*
-class Blue: public Card{
-    int rank = 8;
-    public:
-
-
-//TODO its supposed to getcoinspercard
-//!stupid
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 4;
-        }
-        else if (coins == 2){
-            return 6;
-        }
-        else if(coins == 3){
-            return 8;
-        }
-        else{
-            return 10;
-        }
-    }
-    virtual string getName(){
-        return "Blue";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"B";
-
-   }
-
-
-};
-
-class Chili: public Card{
-    int rank =7;
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 3;
-        }
-        else if (coins == 2){
-            return 6;
-        }
-        else if(coins == 3){
-            return 8;
-        }
-        else{
-            return 9;
-        }
-    }
-    virtual string getName(){
-        return "Chili";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"C";
-
-   }
-
-
-};
-class Stink: public Card{
-    int rank = 6;
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 3;
-        }
-        else if (coins == 2){
-            return 5;
-        }
-        else if(coins == 3){
-            return 7;
-        }
-        else{
-            return 8;
-        }
-    }
-    virtual string getName(){
-        return "Stink";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"S";
-
-   }
-
-
-};
-class Green: public Card{
-    int rank = 5;
-    public:
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 3;
-        }
-        else if (coins == 2){
-            return 5;
-        }
-        else if(coins == 3){
-            return 6;
-        }
-        else{
-            return 7;
-        }
-    }
-    virtual string getName(){
-        return "Green";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"G";
-
-   }
-
-
-};
-class soy: public Card{
-    int rank = 4;
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 2;
-        }
-        else if (coins == 2){
-            return 4;
-        }
-        else if(coins == 3){
-            return 6;
-        }
-        else{
-            return 7;
-        }
-    }
-    virtual string getName(){
-        return "soy";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"s";
-
-   }
-
-
-};
-class black: public Card{
-    int rank = 3;
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 2;
-        }
-        else if (coins == 2){
-            return 4;
-        }
-        else if(coins == 3){
-            return 5;
-        }
-        else{
-            return 6;
-        }
-    }
-    virtual string getName(){
-        return "black";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"b";
-
-   }
-
-
-};
-class Red: public Card{
-    int rank = 2;
-
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 2;
-        }
-        else if (coins == 2){
-            return 3;
-        }
-        else if(coins == 3){
-            return 4;
-        }
-        else{
-            return 5;
-        }
-    }
-    virtual string getName(){
-        return "Red";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"R";
-
-   }
-
-
-};
-class garden: public Card{
-    int rank = 1;
-    public:
-
-    virtual int getCardsPerCoin(int coins){
-        if(coins == 1){
-            return 0; //!maybe 0??? maybe null
-        }
-        else if (coins == 2){
-            return 2;
-        }
-        else if(coins == 3){
-            return 3;
-        }
-        else{
-            return 0; //!maybe null??
-        }
-    }
-    virtual string getName(){
-        return "garden";
-   }
-       virtual int getRank(){
-        return rank;
-    }
-   virtual void print(ostream& out){ //?
-    out<<"g";
-
-   }
-
-
-};*/

@@ -24,7 +24,7 @@ class CardFactory{
 
     //!done i think
     static CardFactory* getCardFactory();
-
+    Card
 
     Deck getDeck();
     
