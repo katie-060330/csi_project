@@ -6,7 +6,7 @@
 
 template<typename T> class Chain{
     //!work on this in relation to chain_base, how do these class and interface interact wiht each other
-    vector<Card*> chian;
+    vector<Card*> chain;
     public:
     Chain<typename T>(istream& in, const CardFactory* cFactory){
         //?Chain(istream&, const CardFactory*) is a constructor which accepts an 
@@ -16,16 +16,32 @@ template<typename T> class Chain{
 
         chain.push_back(cin.get(in));
     }
-    Chain<T>& operator+=(Card* card){
 
+
+
+   //!done i think
+    Chain<T>& operator+=(Card* card){
+// do exception handling for the card if it does not match the template type in the chain
+    //illegal type needs to be raised
+    //otherwise
+    chain.push_back(card);
+    return *this;
     }
+
+
+
+   //TODO
     int sell(){
         //!ask about this function
+        // no because it would just be one so what we can do is retrieve the
+        //type of the chain, then count the amount of cards in the chain
+        // and sell accordingly
+        //! stupid
 
     }
 
     //not sure about this
-    friend ostream& operator<<(ostream& out){
+    friend ostream& operator<<(ostream& out, const Chain& chain){
         out<< chain[0].getName(); 
         for(int i = 0; i < chain.size(); i++){
             out<<chain[0].print(); 
