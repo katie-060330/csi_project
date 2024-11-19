@@ -1,3 +1,6 @@
+
+#ifndef CHAIN_H
+#define CHAIN_H
 #include <iostream>
 #include "Card.h"
 #include "CardFactory.h"
@@ -56,3 +59,4 @@ class Chain : public Card{
     }
 
 };
+#endif
