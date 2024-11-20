@@ -16,7 +16,7 @@ class Chain : public Card{
     Chain<typename T>(istream& in, const CardFactory* cf){
 
         //*check if the pointer to the card factory is valid 
-        if(!cf){
+        if(cf == nullptr){
             throw std::invalid_argument("CardFactory pointer is null")
         }
         while(in )
@@ -40,6 +40,8 @@ class Chain : public Card{
 
    //TODO
     int sell(){
+
+
         //!ask about this function
         // no because it would just be one so what we can do is retrieve the
         //type of the chain, then count the amount of cards in the chain
@@ -50,7 +52,7 @@ class Chain : public Card{
 
     //not sure about this
     friend ostream& operator<<(ostream& out, const Chain& chain){
-        out<< chain[0].getName(); 
+        out<< chain[0].getName();
         for(int i = 0; i < chain.size(); i++){
             out<<chain[0].print(); 
         }

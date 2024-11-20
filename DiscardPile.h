@@ -14,15 +14,12 @@ class DiscardPile{
    DiscardPile(istream& in, const CardFactory* cardFactory);
    DiscardPile& operator+=(Card* c);
    Card* pickUp();
-   Card* top();
+    Card* top() const;
 
 
    void print(std::ostream& out);
 //TODO insertion operator??
-    friend ostream& operator<<(ostream& os,const DiscardPile&){
-       return os<<this.top();
-       }
-
+    friend ostream& operator<<(ostream& os,const DiscardPile& dPile);
 
 
 };

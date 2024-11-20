@@ -8,7 +8,7 @@ class Card{
     public:
     //! Do we need a constructor for this class??
     int rank;
-    virtual ~Card() = 0;
+    ~Card();
     virtual int getCardsPerCoin(int coins);
     virtual int getCoinsPerCard(int cards);
     virtual string getName();
@@ -16,15 +16,12 @@ class Card{
     virtual void print(ostream& out); //ostream printing out emuns
     
     //global virtial friend function insertion opperator 
-    friend ostream& operator<<(ostream& out, Card& card){
-        card.print(out); 
-        return out; 
-    }
+    friend ostream& operator<<(ostream& out,const Card& card);
 };
 
 
 class Blue : public Card {
-int rank = 8;
+int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
     virtual int getCoinsPerCard(int cards) override;
@@ -34,7 +31,7 @@ public:
 };
 
 class Chili : public Card {
-    int rank = 7;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -44,7 +41,7 @@ public:
 };
 
 class Stink : public Card {
-    int rank = 6;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -54,7 +51,7 @@ public:
 };
 
 class Green : public Card {
-    int rank = 5;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -64,7 +61,7 @@ public:
 };
 
 class Soy : public Card {
-    int rank = 4;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -74,7 +71,7 @@ public:
 };
 
 class Black : public Card {
-    int rank = 3;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -84,7 +81,7 @@ public:
 };
 
 class Red : public Card {
-    int rank = 2;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;
@@ -94,7 +91,7 @@ public:
 };
 
 class Garden : public Card {
-    int rank = 1;
+    int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
         virtual int getCoinsPerCard(int cards) override;

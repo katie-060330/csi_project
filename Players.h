@@ -9,7 +9,7 @@
 
 class Player{
     string name; 
-    int coins; 
+    int totalCoins;
     int numberOfChains; 
     int nonZeroChains; 
     bool hasThirdChain; 

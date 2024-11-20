@@ -1,17 +1,17 @@
+#include "DiscardPile.h";
 
    DiscardPile::DiscardPile(istream& in, const CardFactory* cardFactory){
       //TODO ask what the input for the constuctors are becaseu they are all ahinvg the same inputs but it doesnt make any sense to me
    //do a for loop for the amount of lines in in
-   for(int i =0; in.gcount; i++){
+/*   for(int i =0; in.gcount; i++){
        Card card = in.getline();
        discardPile.insert(card);
 
 
-   }
+   }*/
+}
 
 
-
-    //!done i think
    DiscardPile& DiscardPile::operator+=(Card* c){
        //TODO return a refrence the the card just added to the discard pile
         discardPile.push_back(c);
@@ -21,7 +21,7 @@
     //!done i think
    Card* DiscardPile::pickUp(){
        if(!discardPile.empty()){
-            Card* c = discardPile.top();
+            Card* c = const_cast<Card*>(top());
             discardPile.erase(discardPile.begin());
             return c;
        }
@@ -31,7 +31,7 @@
 
    }
     //!done i think
-   Card* DiscardPile::top(){
+    Card* DiscardPile::top() const{
 
     if(!discardPile.empty()){
         return discardPile.front();
@@ -47,11 +47,23 @@
        //*print out all the cards taht where just added to the
 
 
-       for(int i=0; i< discardPile.size();i++){
-        out<< discardPile[i] + "/n";
+       for(Card* c: discardPile){
+        out<< c->getName()+ "/n";
        }
 
 
 
        }
+
+
+          std::ostream& operator<<(ostream& os,const DiscardPile& dPile){
+           const Card* topCard = dPile.top();
+            if(topCard) {
+             os<<*topCard;
+            }
+            else{  os<< "discard pile is empty";
+              }
+              return os;
+}
+
 

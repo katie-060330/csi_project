@@ -1,6 +1,12 @@
 
 #include "Card.h"
 #include <stdexcept>
+Card::~Card() {}
+
+std::ostream& operator<<(std::ostream& os, const Card& card) {
+    card.print(os);
+    return os;
+}
 
 int Blue::getCardsPerCoin(int coins) {
     if(coins == 1){return 4; }
