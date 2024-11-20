@@ -2,6 +2,15 @@
         //TODO
     }
     bool Table::win(std::string& s){
+    //checks if the deck is empty
+    if(p1->getName() == s && deck.empty() && p1->getNumCoins() > p2.getNumCoins()){
+    return true;
+    }
+    else if(p2->getName() ==s &&deck.empty() && p1->getNumCoins() < p2.getNumCoins()){
+    return true;
+    }
+    return false;
+
 //          returns true when a player has won. The name of the player is
 // returned by reference (in the argument). The winning condition is that all cards from the deck
 // must have been picked up and then the player with the most coins wins.

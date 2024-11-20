@@ -13,7 +13,7 @@ class Hand{
 
     Card* play();
 
-    Card* top();
+    Card* top() const;
 
     Card* operator[](int i);
 

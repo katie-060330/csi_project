@@ -28,20 +28,21 @@ Hand::Hand(istream& in, const CardFactory cardFactory){
         }
 
     //!done i think
-    Card* Hand::top(){
+    Card* Hand::top() const{
         //*returns but doesnt remove the top of the hand
-        Card* highest = *hand.begin();
-        if(hand.empty()){
-            return nullptr;
+        if(!hand.empty()){
+            Card* c = hand.begin();
+            return c;
         }
+        return nullptr;
+/*
         for(int i=0; i< hand.size();i++){
             Card* currentCard = operator[](i);
             if(currentCard->getRank() > highest->getRank()){
                 highest = currentCard;
             }
 
-        }
-        return highest;
+        }*/
         //for everycard in the cards, get the rank
         //then get the card with the highest rank
     }

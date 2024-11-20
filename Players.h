@@ -5,6 +5,7 @@
 #include "Card.h"
 #include "Chain.h"
 #include "NotEnoughCoins.h"
+#include "Deck.h"
 #include <string>
 
 class Player{

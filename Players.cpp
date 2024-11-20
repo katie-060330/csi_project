@@ -19,7 +19,9 @@
         return coins;
     }
     Player& Player::operator+=(int coins){
-    totalCoins+coins;
+        totalCoins += coins;
+        return *this
+
         //*adds coins to the plyers total
     }
     int Player::getMaxChains(){
