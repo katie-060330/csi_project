@@ -4,6 +4,9 @@
         numberOfCards = 0;
         //TODO same as other constructors
     }
+    TradeArea::TradeArea(){
+    numberOfCards=0;
+    }
     TradeArea& TradeArea::operator+=(Card* c){
         //*adds the card but doesnt verify that it legally can be added ie the bean is already in the trading area
         tradeArea.push_back(c);
@@ -18,7 +21,17 @@
         return false;
 }
     }
+
     Card* TradeArea::trade(string s){
+    Card* cardMatch;
+     for(Card* card: tradeArea){
+     if(card->getName() == s){
+        cardMatch = card;
+        tradeArea.erase(card);
+     }
+     return cardMatch;
+
+
         //*removes the corresponding bean based off of the input from the user
             //*using the print function from the card class??
     }
