@@ -1,6 +1,6 @@
   Player::Player(std::string& n){
         name = n;
-        coins = 0;
+        totalCoins = 0;
         numberOfChains = 2;
 
         //*initally when the game starts the player has 2 chaons that are worth 0
@@ -19,6 +19,7 @@
         return coins;
     }
     Player& Player::operator+=(int coins){
+    totalCoins+coins;
         //*adds coins to the plyers total
     }
     int Player::getMaxChains(){

@@ -1,33 +1,26 @@
 #ifndef CARDFACTORY_H
 #define CARDFACTORY_H
 #include <iostream>
-using namespace std;
-#include "Card.h"
-#include "Deck.h"
 #include <vector>
-#include <String>
+#include <string>
+#include "Card.h"
+using namespace std;
 
+class Deck;
 
-//function static CardFactory* getFactory() returns a pointer to the only instance of card factory
-//!use singleton patters
 class CardFactory{
 
     private:
-    static const int deckSize = 104;
-        static Card* deckToBe[deckSize];
-        static CardFactory* instance;
+       static const int deckSize = 104;
+       static Card* deckToBe[deckSize];
+       static CardFactory* instance;
+       CardFactory();
 
-
-
-        CardFactory();
     public:
-
-
-    //!done i think
+    ~CardFactory();
     static CardFactory* getCardFactory();
-    
     Deck getDeck();
-    Card* getCard(string cardType);
+    Card* getCard(string cardType) const;
 };
 
 

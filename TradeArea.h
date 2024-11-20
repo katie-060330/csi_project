@@ -9,15 +9,16 @@
 
 class TradeArea{
     public:
-    list<Card> tradeBlock; 
+
     int numberOfCards; 
     std::list<Card*> tradeArea;
 
-    TradeArea(istream& in, cosnt CardFactory cardFactory);
+    TradeArea(istream& in, const CardFactory cardFactory);
     TradeArea& operator+=(Card* c);
     bool legal(Card* c);
     Card* trade(string s);
     int numCards();
+    friend ostream& operator<<(ostream& out, const TradeArea& tA);
 
 };
 #endif
