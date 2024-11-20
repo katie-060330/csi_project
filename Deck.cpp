@@ -2,7 +2,7 @@
 
     Deck::Deck(istream& in, const CardFactory* cardFactory){
         string cardType;
-        if(cardFactory== nullptr){
+        if(cardFactory == nullptr){
             throw std::invalid_argument("CardFactory pointer is null.");
         }
         while(in>>cardType){

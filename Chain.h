@@ -44,7 +44,6 @@ class Chain : public Chain_Base{
 
 
 
-   //TODO
     int sell(){
         //get the card at position 0, and find out how many coins we get based on the size of the chain
         return chain.at(0)->getCoinsPerCard(chain.size()); 
