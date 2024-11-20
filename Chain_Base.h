@@ -1,5 +1,11 @@
 #include <iostream>
-template<typename T> class Chain_Base{
-    //!work on this in relation to chain
-    //?used for the player class to refrnece chains of any type
+template<class T> class Chain_Base{
+    
+    virtual Chain(istream&, const CardFactory*); 
+    virtual Chain<T>& operator+=(Card*); 
+    virtual int sell(); 
+    virtual friend ostream& operator<<(ostream& out, const Chain& chain); 
+
+
+
 };
