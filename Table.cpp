@@ -19,11 +19,21 @@
     }
     bool Table::win(std::string& s){
     //checks if the deck is empty
+<<<<<<< Updated upstream
     if(p1.getName() == s && deck.deck.empty() && p1.getNumCoins() > p2.getNumCoins()){
         return true;
     }
     else if(p2.getName() == s &&deck.deck.empty() && p1.getNumCoins() < p2.getNumCoins()){
         return true;
+=======
+    if(p1->getName() == s && deck.empty() && p1->getNumCoins() > p2.getNumCoins()){
+    return true;
+
+
+    }
+    else if(p2->getName() == s && deck.empty() && p1->getNumCoins() < p2.getNumCoins()){
+    return true;
+>>>>>>> Stashed changes
     }
     return false;
 

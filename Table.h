@@ -15,8 +15,15 @@ class Table{
     Deck deck; 
     DiscardPile dp; 
     TradeArea ta; 
+<<<<<<< Updated upstream
 
     Table();
+=======
+    public:
+    Table(istream& in, const CardFactory* cardFactory);
+    Table(){
+    };
+>>>>>>> Stashed changes
     bool Table::win(std::string& s);
     void Table::printHand(bool showFullHand);
     //TODO same inserion opperator 
