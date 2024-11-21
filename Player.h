@@ -21,7 +21,8 @@ class Player: public Chain_Base<T>{
     int coins;
     Hand hand;
     bool hasThirdChain;
-    std::vector<Chain_Base*> chain;
+    std::vector<Chain_Base*> chain1;
+    std::vector<Chain_Base*> chain2;
     //TODO needs 2 chains 
     Player(); 
     //how do i make a player have a hand of cards

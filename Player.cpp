@@ -10,7 +10,8 @@
         nonZeroChains = 0;
         hasThirdChain = false; 
         hand = Hand(); 
-        //player must have 2 chains 
+        chain1 = {};
+        chain2 = {};
   
     }
 
@@ -35,12 +36,8 @@
     int Player::getNonZeroChains(){
         return nonZeroChains;
     }
-<<<<<<< Updated upstream:Player.cpp
-    Chain<T>& Player::operator[](int i){
-=======
     Chain& Player::operator[](int i){
         return chain.[i];
->>>>>>> Stashed changes:Players.cpp
         //*returns the chain at position i
         //?do we have a array of chains?
     }

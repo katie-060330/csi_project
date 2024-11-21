@@ -2,7 +2,6 @@
 #include "Card.h"
 #include "CardFactory.h"
 #include <vector>
-#include "IllegalType.h"
 #include "Chain_Base.h"
 #include <string>
 using namespace std; 
