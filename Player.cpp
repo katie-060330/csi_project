@@ -1,12 +1,17 @@
+  #include "Player.h"
+  Player::Player(){}
   Player::Player(std::string& n){
+      //*initally when the game starts the player has 2 chaons that are worth 0
+        //*when the player adds a card to the chain, we incremtn this value
+        
         name = n;
         totalCoins = 0;
         numberOfChains = 2;
-
-        //*initally when the game starts the player has 2 chaons that are worth 0
-        //*when the player adds a card to the chain, we incremtn this value
         nonZeroChains = 0;
-        hasThirdChain = false;
+        hasThirdChain = false; 
+        hand = Hand(); 
+        //player must have 2 chains 
+  
     }
 
     Player::Player(istream& in, const CardFactory cardFactory){
@@ -27,10 +32,10 @@
     int Player::getMaxChains(){
         return numberOfChains;
     }
-    int Player::nonZeroChains(){
+    int Player::getNonZeroChains(){
         return nonZeroChains;
     }
-    Chain& Player::operator[](int i){
+    Chain<T>& Player::operator[](int i){
         //*returns the chain at position i
         //?do we have a array of chains?
     }
@@ -38,7 +43,7 @@
         //* if the player has enough money to buy the chain and the payer hasnt bouth the chain already
 
         if(getNumCoins() >=3 && !hasThirdChain){
-            coins-=3;
+            totalCoins-=3;
             hasThirdChain = true;
         }
         else{
@@ -55,6 +60,7 @@
             //TODO only show the top card
         }
     }
+    
     //TODO the inserion opperator to print off the chains and the number of coins
     // Dave 3 coins
     //!red RRRR

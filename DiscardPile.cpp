@@ -1,4 +1,5 @@
 #include "DiscardPile.h";
+DiscardPile::DiscardPile(){}
 
    DiscardPile::DiscardPile(istream& in, const CardFactory* cardFactory){
       //TODO ask what the input for the constuctors are becaseu they are all ahinvg the same inputs but it doesnt make any sense to me
@@ -12,6 +13,7 @@
 }
 
 
+   
    DiscardPile& DiscardPile::operator+=(Card* c){
        //TODO return a refrence the the card just added to the discard pile
         discardPile.push_back(c);

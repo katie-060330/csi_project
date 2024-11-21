@@ -19,6 +19,8 @@ class TradeArea{
     bool legal(Card* c);
     Card* trade(string s);
     int numCards();
+    void displayTradeArea(); 
+    void discard(); 
     friend ostream& operator<<(ostream& out, const TradeArea& tA);
 
 };

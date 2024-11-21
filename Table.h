@@ -3,19 +3,20 @@
 #include <iostream>
 #include "Card.h"
 #include "CardFactory.h"
-#include "Players.h"
+#include "Player.h"
 #include "Deck.h"
 #include "DiscardPile.h"
 #include "TradeArea.h"
 
 class Table{
+    public:
     Player p1; 
     Player p2; 
     Deck deck; 
     DiscardPile dp; 
     TradeArea ta; 
-    public:
-    Table(istream& in, const CardFactory* cardFactory);
+
+    Table();
     bool Table::win(std::string& s);
     void Table::printHand(bool showFullHand);
     //TODO same inserion opperator 

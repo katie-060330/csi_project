@@ -1,8 +1,9 @@
 #include "Hand.h"
+using namespace std; 
 
 
-Hand::Hand(istream& in, const CardFactory cardFactory){
-        //TODO ??
+Hand::Hand(){
+         list<Card*> hand = {};
     }
 
 

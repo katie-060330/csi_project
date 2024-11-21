@@ -1,8 +1,8 @@
 #include <iostream>
-template<class T> class Chain_Base{
+class Chain_Base{
     
-    virtual Chain(); 
-    virtual Chain<T>& operator+=(Card*); 
+    virtual ~Chain_Base() = default;
+    virtual void addCard(Card* card) = 0;
     virtual int sell(); 
     // virtual friend ostream& operator<<(ostream& out, const Chain& chain); 
 

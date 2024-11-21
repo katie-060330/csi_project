@@ -31,12 +31,22 @@
      }
      return cardMatch;
 
-
+     }
         //*removes the corresponding bean based off of the input from the user
             //*using the print function from the card class??
     }
     int TradeArea::numCards(){
         return tradeArea.size();
+    }
+
+    void TradeArea::displayTradeArea(){
+        for(Card* c : tradeArea){
+            cout<< c->getName()<< " ";
+        }
+    }
+    void TradeArea::discard(){
+        tradeArea.clear();
+
     }
     std::ostream& operator<<(std::ostream& out, const TradeArea& tA) {
         out << "trade Area: ";

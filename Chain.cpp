@@ -12,7 +12,6 @@ template <class T>
 class Chain : public Chain_Base{
 
     vector<T*> chain;
-    int size; 
 
     public:
     Chain::Chain<T>(){
