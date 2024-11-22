@@ -2,10 +2,6 @@
 using namespace std; 
 
 
-Hand::Hand(){
-         list<Card*> hand = {};
-    }
-
 
     Hand& Hand::operator+=(Card* c){
         //*adds to the rear of the hand
@@ -20,8 +16,7 @@ Hand::Hand(){
         }
         Card* card = top();
 
-        hand.remove(card);
-
+        hand.pop_front();
         return card;
 
 
@@ -32,16 +27,16 @@ Hand::Hand(){
     Card* Hand::top() const{
         //*returns but doesnt remove the top of the hand
         if(!hand.empty()){
-            Card* c = hand.begin();
+            Card* c = hand.front();
             return c;
         }
         return nullptr;
     }
 
 
-   //!done i think
+
     Card* Hand::operator[](int i){
-        if (i<0|| i>= hand.size()) {
+        if (i<0|| i>= static_cast<int>(hand.size())) {
         return nullptr;
     }
         //*returns the card given at that index i
@@ -52,8 +47,7 @@ Hand::Hand(){
     }
 
 
-std::ostream& operator<<(std::ostream& out, const Deck& d) {
-            out<< "hand: ";
+std::ostream& operator<<(std::ostream& out, const Hand& h) {
             for(auto current = h.hand.begin(); current != h.hand.end(); current++){
                 out<< (*current)->getName()<<" , ";
             }

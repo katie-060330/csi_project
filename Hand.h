@@ -6,7 +6,7 @@
 class Hand{
     public:
     std::list<Card*> hand;
-    Hand();
+    Hand(){  list<Card*> hand = {};}
     Hand& operator+=(Card* c);
     Card* play();
     Card* top() const;

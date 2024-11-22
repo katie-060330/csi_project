@@ -10,12 +10,13 @@ using namespace std;
 template <class T>
 class Chain : public Chain_Base{
 
-    vector<T*> chain;
-
     public:
     Chain::Chain<T>();    
     virtual Chain<T>& operator+=(Card* card); 
     int sell();
     // friend ostream& operator<<(ostream& out, const Chain& chain);
+
+    private:
+        vector<T*> chain;
 
 };

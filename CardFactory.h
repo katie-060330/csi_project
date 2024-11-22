@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include "Card.h"
-#include "Deck.h";
+#include "Deck.h"
 using namespace std;
 
 

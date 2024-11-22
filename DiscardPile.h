@@ -11,8 +11,8 @@ class DiscardPile{
    std::vector<Card *> discardPile;
 
     //TODO
-    DiscardPile();
-   DiscardPile(istream& in, const CardFactory* cardFactory);
+    DiscardPile(){}
+   //DiscardPile(istream& in, const CardFactory* cardFactory);
    DiscardPile& operator+=(Card* c);
    Card* pickUp();
     Card* top() const;

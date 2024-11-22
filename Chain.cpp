@@ -13,6 +13,7 @@ class Chain : public Chain_Base{
     vector<T*> chain;
 
     public:
+    template<typename T>
     Chain(){
         //the costructor creating a chain of type T
     }
@@ -31,11 +32,11 @@ class Chain : public Chain_Base{
 
         return *this;
     }
-
+    template<typename T>
     void Chain<T*>::addCard(Card* card) override {
     *this += card;  
 }
-
+    template<typename T>
     int Chain<T*>::sell(){
         //get the card at position 0, and find out how many coins we get based on the size of the chain
         if (chain.empty()) return 0;
@@ -43,6 +44,7 @@ class Chain : public Chain_Base{
     }
 
     //not sure about this
+    /*
     friend ostream& operator<<(ostream& out, const Chain& chain){
         out<< chain[0].getName(); 
         for(int i = 0; i < chain.size(); i++){
@@ -51,7 +53,7 @@ class Chain : public Chain_Base{
         }
         return out; 
         
-    }
+    }*/
 
 
 };
