@@ -18,20 +18,13 @@
         ta = TradeArea(); 
     }
     bool Table::win(std::string& s){
-<<<<<<< Updated upstream
-    //checks if the deck is empty
-=======
 
->>>>>>> Stashed changes
     if(p1.getName() == s && deck.deck.empty() && p1.getNumCoins() > p2.getNumCoins()){
         return true;
     }
     else if(p2.getName() == s &&deck.deck.empty() && p1.getNumCoins() < p2.getNumCoins()){
         return true;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     }
     return false;
 

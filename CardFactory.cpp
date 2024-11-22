@@ -45,7 +45,7 @@ Card* CardFactory::deckToBe[CardFactory::deckSize];
           }
           return instance;
     }
-
+/*
     Card* CardFactory::getCard(string cardType){
         
         for(int i =0; i < deck.size();i++){
@@ -59,16 +59,17 @@ Card* CardFactory::deckToBe[CardFactory::deckSize];
 
 
     }
-
+*/
     //TODO because we need to know proper way to construct the deck
 
     Deck CardFactory::getDeck(){
         for(int i =0; i<deckSize; i++){
-        deckToBe[i] = cardDeck[i];
+        cardDeck.deck.push_back(deckToBe[i]);
         }
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::shuffle(cardDeck.deck.front(), cardDeck.deck.back(), seed );
-    return cardDeck;
+        std::shuffle(cardDeck.deck.begin(), cardDeck.deck.end(), std::default_random_engine(seed)); 
+
+        return cardDeck;
     }
     
 

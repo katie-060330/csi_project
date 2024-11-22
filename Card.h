@@ -8,7 +8,7 @@ class Card{
     public:
     //! Do we need a constructor for this class??
     int rank;
-    ~Card();
+    virtual ~Card() {}
     virtual int getCardsPerCoin(int coins);
     virtual int getCoinsPerCard(int cards);
     virtual string getName();

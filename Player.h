@@ -29,26 +29,15 @@ class Player: public Chain_Base<T>{
     public: 
     Player(std::string& n);
     Player(istream& in, const CardFactory cardFactory);
-<<<<<<< Updated upstream
-    std::string getName();
-=======
     std::string getName() const;
->>>>>>> Stashed changes
     int getNumCoins();
     Player& operator+=(int coins);
     int getMaxChains();
     int getNonZeroChains();
     Chain<T>& operator[](int i);
     void buyThirdChain();
-<<<<<<< Updated upstream
     Hand& getHand();
-    void printHand(std::ostream& out, bool showFullHand);
-=======
-
-    Hand& getHand();
-
     void printHand(std::ostream& out, bool showFullHand);
      friend ostream &operator<<(ostream &out, const Player &player);
->>>>>>> Stashed changes
 };
 #endif

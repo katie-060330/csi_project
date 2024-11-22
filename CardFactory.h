@@ -18,7 +18,7 @@ class CardFactory{
        CardFactory();
 
     public:
-    Deck cardDeck = new Deck();
+    Deck cardDeck;
     ~CardFactory();
     static CardFactory* getCardFactory();
     Deck getDeck();
