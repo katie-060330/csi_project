@@ -94,7 +94,7 @@ class Garden : public Card {
     int rank;
 public:
     virtual int getCardsPerCoin(int coins) override;
-        virtual int getCoinsPerCard(int cards) override;
+    virtual int getCoinsPerCard(int cards) override;
     virtual string getName() override;
     virtual int getRank() override;
     virtual void print(ostream& out) override;

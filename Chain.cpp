@@ -13,15 +13,16 @@ class Chain : public Chain_Base{
     vector<T*> chain;
 
     public:
-    Chain::Chain<T>(){
+    Chain(){
         //the costructor creating a chain of type T
     }
 
    //!done i think
-    Chain<T>& operator+=(Card* card){
+   template<typename T>
+    Chain<T*>::Chain<T>& Chain<T*>::operator+=(Card* card){
 
         //checking that the card that wants to be added is of the same tye of the existing chain 
-        if(typeid(*card) != typeid(T)){
+        if(typeid(*card) != typeid(chain.front())){
             throw invalid_argument("Not the right type of card");
         }
 
@@ -31,8 +32,13 @@ class Chain : public Chain_Base{
         return *this;
     }
 
-    int sell(){
+    void Chain<T*>::addCard(Card* card) override {
+    *this += card;  
+}
+
+    int Chain<T*>::sell(){
         //get the card at position 0, and find out how many coins we get based on the size of the chain
+        if (chain.empty()) return 0;
         return chain.at(0)->getCoinsPerCard(chain.size()); 
     }
 
@@ -46,5 +52,6 @@ class Chain : public Chain_Base{
         return out; 
         
     }
+
 
 };

@@ -55,23 +55,24 @@ int main()
                 cout << "would you like to add any of the trading cards to your chain";
                 cin >> input;
                 cout << "What card would you like to add to your chain (starting at 0)" << endl;
-                int in;
+                std::string in;
 
                 cin >> in;
                 if (isNumber(in))
                 {
-                    if(in >=table.ta.tradeArea.size()){
+                    int number = std::stoi(in); // Convert string to int
+                    if(number >=table.ta.tradeArea.size()){
                          throw std::invalid_argument( "received negative value" );
                     }
                     else{
                         //if the chain is empty we add the card of that type to the empty chain 
                         if(p1.chain1.empty()){
-                            p1.chain1.push_back(table.ta.tradeArea[in])
-                            table.ta.tradeArea.
-                            table.ta.p1.chain1.chain+=(table.ta.tradeArea[in])
+                            p1.chain1.push_back(table.ta.tradeArea[number])
+                          
+                            table.ta.p1.chain1.chain+=(table.ta.tradeArea[number]);
                         }
-                        else if if(table.ta.p1.chain2.chain.empty()){
-                            table.ta.p1.chain1.chain+=(table.ta.tradeArea[in])
+                        else if(table.ta.p1.chain2.chain.empty()){
+                            
                         }
                         //if both chians are occupied then we add it to the xisting chian 
                         else if(typeid(table.ta.tradeArea[in] == typeid(table.p1.chain1[0]))){
@@ -85,11 +86,11 @@ int main()
                         //bad play by p1, will have to get rid of one of the chians becasue both are occupied 
                         else{
                             cout<<"What chain would you like to replace"<<endl; 
-                            int chainNumber; 
+                            std::string chainNumber; 
                             cin>>chainNumber; 
-                            if(isNumber(chianNumber)){
+                            if(isNumber(chainNumber)){
                                 if(chainNumber == 1){
-                                    table.p1
+                                   
 
                                 }
                             }

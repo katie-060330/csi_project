@@ -26,7 +26,7 @@
     }
     Player& Player::operator+=(int coins){
         totalCoins += coins;
-        return *this
+        return *this;
 
         //*adds coins to the plyers total
     }
@@ -37,7 +37,7 @@
         return nonZeroChains;
     }
     Chain& Player::operator[](int i){
-        return chain.[i];
+        return chain[i];
         //*returns the chain at position i
         //?do we have a array of chains?
     }
