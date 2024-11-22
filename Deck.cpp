@@ -19,3 +19,10 @@ Card *Deck::draw()
         return nullptr;
     }
 }
+std::ostream& operator<<(std::ostream& out, const Deck& d) {
+    out << "deck: ";
+    for (size_t i = 0; i < d.deck.size(); ++i) {
+        out << d.deck[i]->getName() + "/n";
+    }
+    return out;
+}

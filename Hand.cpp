@@ -28,7 +28,7 @@ Hand::Hand(){
 
         }
 
-    //!done i think
+
     Card* Hand::top() const{
         //*returns but doesnt remove the top of the hand
         if(!hand.empty()){
@@ -36,16 +36,6 @@ Hand::Hand(){
             return c;
         }
         return nullptr;
-/*
-        for(int i=0; i< hand.size();i++){
-            Card* currentCard = operator[](i);
-            if(currentCard->getRank() > highest->getRank()){
-                highest = currentCard;
-            }
-
-        }*/
-        //for everycard in the cards, get the rank
-        //then get the card with the highest rank
     }
 
 
@@ -60,3 +50,13 @@ Hand::Hand(){
         return *front;
 
     }
+
+
+std::ostream& operator<<(std::ostream& out, const Deck& d) {
+            out<< "hand: ";
+            for(auto current = h.hand.begin(); current != h.hand.end(); current++){
+                out<< (*current)->getName()<<" , ";
+            }
+            return out;
+
+           }

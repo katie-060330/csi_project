@@ -11,14 +11,7 @@ class Hand{
     Card* play();
     Card* top() const;
     Card* operator[](int i);
-    friend ostream& operator<<(ostream& out, const Hand& h){
-        out<< "hand: ";
-        for(auto current = h.hand.begin(); current != h.hand.end(); current++){
-            out<< (*current)->getName()<<" , ";
-        }
-        return out;
-
-       }
+    friend ostream& operator<<(ostream& out, const Hand& h);
 
 };
 #endif

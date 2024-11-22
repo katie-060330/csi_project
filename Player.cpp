@@ -18,7 +18,7 @@
     Player::Player(istream& in, const CardFactory cardFactory){
         //TODO ??
     }
-    std::string Player::getName(){
+    std::string Player::getName() const{
         return name;
     }
     int Player::getNumCoins(){
@@ -67,6 +67,12 @@
             //TODO only show the top card
         }
     }
+    std::ostream& operator<<(std::ostream& out, const Player& player) {
+            out<<player.getName();
+            out<<player.getNumCoins();
+            //learn to print chain type then each chain.getnmae or whatever
+
+            return out;
     
     //TODO the inserion opperator to print off the chains and the number of coins
     // Dave 3 coins

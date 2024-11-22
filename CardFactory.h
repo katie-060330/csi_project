@@ -4,9 +4,10 @@
 #include <vector>
 #include <string>
 #include "Card.h"
+#include "Deck.h"
 using namespace std;
 
-class Deck;
+
 
 class CardFactory{
 
@@ -17,6 +18,7 @@ class CardFactory{
        CardFactory();
 
     public:
+    Deck cardDeck = new Deck();
     ~CardFactory();
     static CardFactory* getCardFactory();
     Deck getDeck();

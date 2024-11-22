@@ -18,28 +18,43 @@
         ta = TradeArea(); 
     }
     bool Table::win(std::string& s){
+<<<<<<< Updated upstream
     //checks if the deck is empty
+=======
+
+>>>>>>> Stashed changes
     if(p1.getName() == s && deck.deck.empty() && p1.getNumCoins() > p2.getNumCoins()){
         return true;
     }
     else if(p2.getName() == s &&deck.deck.empty() && p1.getNumCoins() < p2.getNumCoins()){
         return true;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }
     return false;
 
-//          returns true when a player has won. The name of the player is
-// returned by reference (in the argument). The winning condition is that all cards from the deck
-// must have been picked up and then the player with the most coins wins.
     }
+
+
     void Table::printHand(bool showFullHand){
         if(showFullHand){
+        hand->print();
             //TODO print the full hand to the ostream
         }
         else{
-            //TODO only show the top card
+        hand->top()->print();
         }
     }
+    std::ostream& operator<<(std::ostream& out, const Table& table) {
+        out<< table.p1.getName();
+        out<< table.p2.getName();
+        out<< table.dp.print();
+        out<< table.ta.displayTradeArea();
+        return out;
     //TODO same inserion opperator
 //     //and the insertion operator (friend) to print a Table to an std::ostream. The two players,
 // the discard pile, the trading area should be printed. This is the top level print out. Note that a
 // complete output with all cards for the pause functionality is printed with a separate function.
+}
