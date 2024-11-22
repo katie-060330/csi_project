@@ -29,14 +29,14 @@ class Player: public Chain_Base<T>{
     public: 
     Player(std::string& n);
     Player(istream& in, const CardFactory cardFactory);
-    std::string Player::getName();
-    int Player::getNumCoins();
-    Player& Player::operator+=(int coins);
-    int Player::getMaxChains();
-    int Player::getNonZeroChains();
-    Chain<T>& Player::operator[](int i);
-    void Player::buyThirdChain();
-    Hand& Player::getHand();
-    void Player::printHand(std::ostream& out, bool showFullHand);
+    std::string getName();
+    int getNumCoins();
+    Player& operator+=(int coins);
+    int getMaxChains();
+    int getNonZeroChains();
+    Chain<T>& operator[](int i);
+    void buyThirdChain();
+    Hand& getHand();
+    void printHand(std::ostream& out, bool showFullHand);
 };
 #endif
