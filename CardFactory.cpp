@@ -1,4 +1,3 @@
-
 #include "CardFactory.h"
 #include "Deck.h"
 #include <algorithm>
@@ -62,12 +61,12 @@ Card* CardFactory::deckToBe[CardFactory::deckSize];
 */
     //TODO because we need to know proper way to construct the deck
 
-    Deck CardFactory::getDeck(){
+    Deck* CardFactory::getDeck(){
         for(int i =0; i<deckSize; i++){
-        cardDeck.deck.push_back(deckToBe[i]);
+        cardDeck->deck.push_back(deckToBe[i]);
         }
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::shuffle(cardDeck.deck.begin(), cardDeck.deck.end(), std::default_random_engine(seed)); 
+        std::shuffle(cardDeck->deck.begin(), cardDeck->deck.end(), std::default_random_engine(seed));
 
         return cardDeck;
     }

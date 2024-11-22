@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include "Card.h"
-#include "Deck.h"
+#include "Deck.h";
 using namespace std;
 
 
@@ -18,10 +18,10 @@ class CardFactory{
        CardFactory();
 
     public:
-    Deck cardDeck;
+    Deck* cardDeck;
     ~CardFactory();
     static CardFactory* getCardFactory();
-    Deck getDeck();
+    Deck* getDeck();
     Card* getCard(string cardType) const;
 };
 
