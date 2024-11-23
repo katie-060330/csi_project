@@ -22,19 +22,20 @@
 }
     }
 
-    Card* TradeArea::trade(string s){
-    Card* cardMatch;
-     for(Card* card: tradeArea){
-     if(card->getName() == s){
-        cardMatch = card;
-        tradeArea.erase(card);
-     }
-     return cardMatch;
-
-     }
-        //*removes the corresponding bean based off of the input from the user
-            //*using the print function from the card class??
+    Card* TradeArea::trade(string s) {
+        //using iterator over list to find the 
+        //! i think we use the above function to verify??
+    Card* cardMatch = nullptr;  
+    for (auto it = tradeArea.begin(); it != tradeArea.end(); ++it) {
+        if ((*it)->getName() == s) {
+            cardMatch = *it;  
+            tradeArea.erase(it);  
+            return cardMatch; 
+            }
     }
+    return nullptr;  
+    }
+
     int TradeArea::numCards(){
         return tradeArea.size();
     }

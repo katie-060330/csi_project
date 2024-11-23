@@ -33,18 +33,18 @@
 
     void Table::printHand(bool showFullHand){
         if(showFullHand){
-        hand->print();
+            cout << hand; 
             //TODO print the full hand to the ostream
         }
         else{
-        hand->top()->print();
+            cout <<hand->top(); 
         }
     }
     std::ostream& operator<<(std::ostream& out, const Table& table) {
         out<< table.p1.getName();
         out<< table.p2.getName();
-        out<< table.dp.print();
-        out<< table.ta.displayTradeArea();
+        out<< table.dp;
+        out<< table.ta;
         return out;
     //TODO same inserion opperator
 //     //and the insertion operator (friend) to print a Table to an std::ostream. The two players,
