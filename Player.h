@@ -11,7 +11,7 @@
 #include "Hand.h"
 #include <vector>
 
-class Player: public Chain_Base<T>{
+class Player{
     public: 
     string name; 
     int totalCoins;
