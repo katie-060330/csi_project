@@ -18,11 +18,9 @@ class Player: public Chain_Base<T>{
     int numberOfChains; 
     int nonZeroChains; 
     bool hasThirdChain; 
-    int coins;
     Hand hand;
     bool hasThirdChain;
-    Chain<T> chain1;
-    Chain<T> chain2; 
+    vector<Chain<Card*>> chains; 
     //TODO needs 2 chains 
     Player(); 
     //how do i make a player have a hand of cards
@@ -34,7 +32,8 @@ class Player: public Chain_Base<T>{
     Player& operator+=(int coins);
     int getMaxChains();
     int getNonZeroChains();
-    Chain<T>& operator[](int i);
+    
+    Chain<Card*>& Player::operator[](int i);
     void buyThirdChain();
     Hand& getHand();
     void printHand(std::ostream& out, bool showFullHand);

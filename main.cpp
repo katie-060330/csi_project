@@ -30,6 +30,7 @@ int main()
     Table table = Table();
     Player p1 = table.p1; 
     Player p2 = table.p2; 
+    Player players[] = {p1,p2};
 
     // inintlaizing the hands of the two players
     for (int i = 0; i < 5; i++)
@@ -43,73 +44,77 @@ int main()
         // for each player
 
         // Display table?
-        table.p1.hand.operator+=(table.deck.draw());
-        if (!table.ta.tradeArea.empty())
-        {
-            // add bean cards form the trade area to chains or discard them from your hand
-            table.ta.displayTradeArea();
-            char input = 'y';
-
-            while (input == 'Y' || input == 'y')
-            {
-                cout << "would you like to add any of the trading cards to your chain";
-                cin >> input;
-                cout << "What card would you like to add to your chain (starting at 0)" << endl;
-                std::string in;
-
-                cin >> in;
-                if (isNumber(in))
-                {
-                    int number = std::stoi(in); // Convert string to int
-                    if(number >=table.ta.tradeArea.size()){
-                         throw std::invalid_argument( "received negative value" );
-                    }
-                    else{
-                        //if the chain is empty we add the card of that type to the empty chain 
-                        if(p1.chain1.empty()){
-                            p1.chain1.push_back(table.ta.tradeArea[number])
-                          
-                            table.ta.p1.chain1.chain+=(table.ta.tradeArea[number]);
-                        }
-                        else if(table.ta.p1.chain2.chain.empty()){
-                            
-                        }
-                        //if both chians are occupied then we add it to the xisting chian 
-                        else if(typeid(table.ta.tradeArea[in] == typeid(table.p1.chain1[0]))){
-                            table.ta.p1.chain1.operator+=table.ta.tradeArea[in];
+        for(int i = 0; i < 2; i++){
+            Player currentPlayer = players[i]; 
+            //dispayign table 
+            cout << table;
+            currentPlayer.hand.operator+=(table.deck.draw());
+            if (!table.ta.tradeArea.empty()){
+                //add bean to the chain or discard them 
+                cout << "Would you like to add the card in the trade area (a) or discard them (d) "<<endl; 
+                char input; 
+                cin >>input; 
+                if(input == 'a'){
+                    //add to the players chain
+                    Card* taCard = table.ta.tradeArea.front(); 
+                    table.ta.tradeArea.erase(table.ta.tradeArea.begin());
+                    for(int i = 0; i < currentPlayer.chains.size(); i++){
+                        if(taCard->getName() == "temp"){
 
                         }
-                        else if(typeid(table.ta.tradeArea[in] == typeid(table.p1.chain2[0]))){
-                            table.ta.p1.chain2.operator+=table.ta.tradeArea[in];
 
-                        }
-                        //bad play by p1, will have to get rid of one of the chians becasue both are occupied 
-                        else{
-                            cout<<"What chain would you like to replace"<<endl; 
-                            std::string chainNumber; 
-                            cin>>chainNumber; 
-                            if(isNumber(chainNumber)){
-                                if(chainNumber == 1){
-                                   
 
-                                }
-                            }
-
-                        }
                     }
                 }
-                else
-                {
-                    cout << "Input is not a valid number." << endl;
+                else{
+                    //discard the trade area 
+                    table.ta.tradeArea.empty(); 
                 }
             }
-
-            // dicard all of the trading
-            table.ta.discard();
-            cout << "Trade area discared" << endl;
+            // currentPlayer.
         }
-        // play topmost card from your hand
-    }
+        
 
-    return 0;
+
+  
 }
+  return 0;
+}
+
+
+    //     if (!table.ta.tradeArea.empty())
+    //     {
+    //         // add bean cards form the trade area to chains or discard them from your hand
+    //         table.ta.displayTradeArea();
+    //         char input = 'y';
+
+    //         while (input == 'Y' || input == 'y')
+    //         {
+    //             cout << "would you like to add any of the trading cards to your chain";
+    //             cin >> input;
+    //             cout << "What card would you like to add to your chain (starting at 0)" << endl;
+    //             std::string in;
+
+    //             cin >> in;
+    //             if (isNumber(in))
+    //             {
+    //                 int number = std::stoi(in); // Convert string to int
+    //                 if(number >=table.ta.tradeArea.size()){
+    //                      throw std::invalid_argument( "received negative value" );
+    //                 }
+                    
+    //                         }
+
+                
+    //             else
+    //             {
+    //                 cout << "Input is not a valid number." << endl;
+    //             }
+    //         }
+
+    //         // dicard all of the trading
+    //         table.ta.discard();
+    //         cout << "Trade area discared" << endl;
+    //     }
+    //     // play topmost card from your hand
+    // }

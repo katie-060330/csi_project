@@ -10,8 +10,7 @@
         nonZeroChains = 0;
         hasThirdChain = false; 
         hand = Hand(); 
-        chain1 = {};
-        chain2 = {};
+        chains = {}; 
   
     }
 
@@ -22,7 +21,7 @@
         return name;
     }
     int Player::getNumCoins(){
-        return coins;
+        return totalCoins;
     }
     Player& Player::operator+=(int coins){
         totalCoins += coins;
@@ -36,10 +35,8 @@
     int Player::getNonZeroChains(){
         return nonZeroChains;
     }
-    Chain& Player::operator[](int i){
-        return chain[i];
-        //*returns the chain at position i
-        //?do we have a array of chains?
+    Chain<Card*>& Player::operator[](int i){
+        return chains.at(i);
     }
     void Player::buyThirdChain(){
         //* if the player has enough money to buy the chain and the payer hasnt bouth the chain already
@@ -53,12 +50,13 @@
         }
         //TODO adds an empty chain to the player
     }
-    Hand* Player::getHand(){
-    return hand;
+    Hand& Player::getHand(){
+        return hand;
     }
     void Player::printHand(std::ostream& out, bool showFullHand){
         if(showFullHand){
-        hand.print(out);
+            //uisng insertion opperator 
+            cout << hand; 
             //TODO print the full hand to the ostream
         }
         else{
@@ -67,13 +65,12 @@
             //TODO only show the top card
         }
     }
-    std::ostream& operator<<(std::ostream& out, const Player& player) {
+    std::ostream& operator<<(std::ostream& out,  Player& player) {
             out<<player.getName();
             out<<player.getNumCoins();
-            //learn to print chain type then each chain.getnmae or whatever
 
             return out;
-    
+    }
     //TODO the inserion opperator to print off the chains and the number of coins
     // Dave 3 coins
     //!red RRRR
