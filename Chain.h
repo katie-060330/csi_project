@@ -11,11 +11,13 @@ template <class T>
 class Chain : public Chain_Base{
 
     public:
-    Chain::Chain<T>();    
+    Chain();    
     virtual Chain<T>& operator+=(Card* card); 
     int sell();
-    // friend ostream& operator<<(ostream& out, const Chain& chain);
-
+    friend std::ostream& operator<<(std::ostream& out, const Chain<T>& chain);
+    string getType();
+    int startFreshChain(Card* card);
+    Card* getCardType();
     private:
         vector<T*> chain;
 
