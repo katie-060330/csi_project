@@ -4,9 +4,7 @@
         numberOfCards = 0;
         //TODO same as other constructors
     }
-    TradeArea::TradeArea(){
-    numberOfCards=0;
-    }
+
     TradeArea& TradeArea::operator+=(Card* c){
         //*adds the card but doesnt verify that it legally can be added ie the bean is already in the trading area
         tradeArea.push_back(c);

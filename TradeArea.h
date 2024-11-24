@@ -14,7 +14,8 @@ class TradeArea{
     std::list<Card*> tradeArea;
 
     TradeArea(istream& in, const CardFactory cardFactory);
-    TradeArea();
+    TradeArea(){};
+    ~TradeArea() { numberOfCards=0;};
     TradeArea& operator+=(Card* c);
     bool legal(Card* c);
     Card* trade(string s);

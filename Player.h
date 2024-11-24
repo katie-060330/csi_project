@@ -19,12 +19,11 @@ class Player{
     int nonZeroChains; 
     bool hasThirdChain; 
     Hand hand;
-    bool hasThirdChain;
-    vector<Chain<Card*>> chains; 
+    vector<Chain<Card*>> chains;
     //TODO needs 2 chains 
     Player(); 
     //how do i make a player have a hand of cards
-    public: 
+    public:
     Player(std::string& n);
     Player(istream& in, const CardFactory cardFactory);
     std::string getName() const;
@@ -33,7 +32,7 @@ class Player{
     int getMaxChains();
     int getNonZeroChains();
     
-    Chain<Card*>& Player::operator[](int i);
+    Chain<Card*>& operator[](int i);
     void buyThirdChain();
     Hand& getHand();
     void printHand(std::ostream& out, bool showFullHand);

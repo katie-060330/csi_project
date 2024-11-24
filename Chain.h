@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "Card.h"
 #include "CardFactory.h"
 #include <vector>
@@ -6,19 +6,66 @@
 #include <string>
 using namespace std; 
 
-//The template Chain will have to be instantiated in the program by the concrete derived card classes, e.g., 
+
 template <class T>
 class Chain : public Chain_Base{
 
     public:
-    Chain();    
-    virtual Chain<T>& operator+=(Card* card); 
-    int sell();
-    friend std::ostream& operator<<(std::ostream& out, const Chain<T>& chain);
-    string getType();
-    int startFreshChain(Card* card);
-    Card* getCardType();
+    Chain() : chain() {}
+     Chain<T>& operator+=(Card* card){
+                 T* castC = dynamic_cast<T*>(card);
+                    if (!castC) {
+                        throw std::invalid_argument("Card doesnt match the chain");
+                    }
+                    chain.push_back(castC);
+                        return *this;
+
+            }
+
+            void addCard(Card* card) {
+               *this += card;
+
+        }
+        int sell(){
+                if (chain.empty()) {
+                        return 0;
+                    }
+                    int size = chain.size();
+                    T* topCard = chain.front();
+                    int coins = topCard->getCoinsPerCard(size);
+                    chain.clear();
+                    return coins;
+
+
+
+            }
+            string getType(){
+                    if(chain.empty()){
+                        return "Empty";
+                    }
+                    else{
+                       return chain.front()->getName();
+                    }
+                }
+
+    void startFreshChain(Card* card){
+        //sells the existing
+        sell();
+         *this += card;
+
+    }
+    Card* getCardType(){
+        if(chain.empty()){
+            return nullptr;
+        }
+        return chain.at(0);
+    }
     private:
         vector<T*> chain;
 
+friend std::ostream& operator<<( std::ostream &output, const Chain<Card*> & chain );
+
+
+
 };
+*/

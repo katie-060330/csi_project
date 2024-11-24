@@ -8,9 +8,7 @@ Card::~Card() {}
 //     return os;
 // }
 
-Blue::Blue(){
 
-}
 
 int Blue::getCardsPerCoin(int coins) {
     if(coins == 1){return 4; }
@@ -35,17 +33,13 @@ string Blue::getName() {
     return "Blue";
 }
 
-int Blue::getRank() {
-    return rank;
-}
+
 
 void Blue::print(ostream& out) {
     out << "B";
 }
 
-Chili::Chili(){
 
-}
 int Chili::getCardsPerCoin(int coins) {
      if(coins == 1){ return 3;  }
             else if(coins == 2){return 6; }
@@ -66,17 +60,13 @@ string Chili::getName() {
     return "Chili";
 }
 
-int Chili::getRank() {
-    return rank;
-}
+
 
 void Chili::print(ostream& out) {
     out << "C";
 }
 
-Stink::Stink(){
 
-}
 int Stink::getCardsPerCoin(int coins) {
     if(coins == 1){return 3; }
             else if (coins == 2){ return 5; }
@@ -98,17 +88,13 @@ string Stink::getName() {
     return "Stink";
 }
 
-int Stink::getRank() {
-    return rank;
-}
+
 
 void Stink::print(ostream& out) {
     out << "S";
 }
 
-Green::Green(){
 
-}
 int Green::getCardsPerCoin(int coins) {
     if(coins == 1){ return 3; }
            else if (coins == 2){ return 5; }
@@ -130,16 +116,12 @@ int Green::getCoinsPerCard(int cards) {
 string Green::getName(){
         return "Green";
    }
-int Green::getRank(){
-        return rank;
-    }
+
 void Green::print(ostream& out){
     out<<"G";
 
    }
-   Soy::Soy(){
 
-   }
 
    int Soy::getCardsPerCoin(int coins) {
         if(coins == 1){return 2;}
@@ -161,16 +143,12 @@ void Green::print(ostream& out){
    string Soy::getName(){
            return "Soy";
       }
-   int Soy::getRank(){
-           return rank;
-       }
+
    void Soy::print(ostream& out){ //?
        out<<"s";
 
       }
-Black::Black(){
 
-}
     int Black::getCardsPerCoin(int coins) {
           if(coins == 1){return 2;}
                  else if (coins == 2){return 4;}
@@ -192,17 +170,13 @@ Black::Black(){
         return "Black";
     }
 
-    int Black::getRank() {
-        return rank;
-    }
+
 
     void Black::print(ostream& out) {
         out << "b";
     }
 
-Red::Red(){
 
-}
      int Red::getCardsPerCoin(int coins) {
               if(coins == 1){return 2;}
                       else if (coins == 2){return 3;}
@@ -224,17 +198,13 @@ Red::Red(){
             return "Red";
         }
 
-        int Red::getRank() {
-            return rank;
-        }
+
 
         void Red::print(ostream& out) {
             out << "R";
         }
 
-Garden::Garden(){
-    
-}
+
     int Garden::getCardsPerCoin(int coins) {
                  if(coins == 1) { return 0; }
                      else if (coins == 2) { return 2; }
@@ -257,9 +227,7 @@ Garden::Garden(){
                 return "Garden";
             }
 
-            int Garden::getRank() {
-                return rank;
-            }
+
 
             void Garden::print(ostream& out) {
                 out << "g";

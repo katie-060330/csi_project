@@ -1,15 +1,14 @@
   #include "Player.h"
   Player::Player(){}
   Player::Player(std::string& n){
-      //*initally when the game starts the player has 2 chaons that are worth 0
-        //*when the player adds a card to the chain, we incremtn this value
+
         
         name = n;
         totalCoins = 0;
         numberOfChains = 2;
         nonZeroChains = 0;
         hasThirdChain = false; 
-        hand = Hand(); 
+        hand = Hand();
         chains = {}; 
   
     }
@@ -36,7 +35,7 @@
         return nonZeroChains;
     }
     Chain<Card*>& Player::operator[](int i){
-        return chains.at(i);
+        return (chains.at(i));
     }
     void Player::buyThirdChain(){
         //* if the player has enough money to buy the chain and the payer hasnt bouth the chain already
