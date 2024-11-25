@@ -11,7 +11,7 @@ class Card{
     virtual int getCardsPerCoin(int coins);
     virtual int getCoinsPerCard(int cards);
     virtual string getName();
-    virtual void print(ostream& out); //ostream printing out emuns
+    virtual void print(ostream& out); //ostream printing out
     
     //global virtial friend function insertion opperator 
     friend ostream& operator<<(ostream& out,const Card& card);

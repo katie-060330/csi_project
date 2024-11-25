@@ -1,12 +1,7 @@
 #ifndef PLAYERS_H
 #define PLAYERS_H
 #include <iostream>
-#include "CardFactory.h"
-#include "Card.h"
 #include "Chain.h"
-
-#include "NotEnoughCoins.h"
-#include "Deck.h"
 #include <string>
 #include "Hand.h"
 #include <vector>

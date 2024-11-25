@@ -1,6 +1,7 @@
 #include "Hand.h"
 using namespace std;
 
+
 Hand &Hand::operator+=(Card *c)
 {
     //*adds to the rear of the hand

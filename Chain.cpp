@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include "Card.h"
@@ -24,5 +24,4 @@ friend std::ostream& operator<<(std::ostream& out, const Chain_Base& chain) {
     }
     return out;
 }
-}
-/*
+};

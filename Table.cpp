@@ -18,7 +18,7 @@
         ta = TradeArea(); 
     }
     bool Table::win(std::string& s){
-    if(deck->size() == 0){
+    if(deck.deck.size() == 0){
     if(p1.getName() == s && deck.deck.empty() && p1.getNumCoins() > p2.getNumCoins()){
         return true;
     }

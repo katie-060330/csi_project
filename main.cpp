@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-
 #include "Table.h"
 using namespace std;
 void playCard(Player currentPlayer);
@@ -155,13 +154,11 @@ int main()
                 cin >> input;
                 if (input == "y" || input == "Y")
                 {
-                    for(int j = 0; j < currentPlayer.chains.size(); j++){
-                        if(table.ta.legal(currentPlayer.chains[j].getCardType())){
-                            currentPlayer.chains[j].operator+=(table.ta.trade(currentPlayer.chains[j].getType()));
-                        }
+                    for (int j = 0; j < currentPlayer.chains.size(); j++)
+                    {
+                        // auotmatical adds all of the cards to the chains that it matches
+                        currentPlayer.chains[j].operator+=(table.ta.trade(currentPlayer.chains[j].getType()));
                     }
-
-
                 }
 
             } while (input == "y" || input == "Y");
@@ -218,8 +215,8 @@ void playCard(Player currentPlayer)
             else
             {
                 // starts new chain with the top most card of their hand
-                int coins = currentPlayer.chains[number].startFreshChain(toPlay);
-                cout << "sold chain " << number + 1 << " for " << coins << " coins" << endl;
+                currentPlayer.chains[number].startFreshChain(toPlay);
+                cout << "sold chain " << number + 1 << endl;
             }
         }
     }
