@@ -1,4 +1,4 @@
-/*#ifndef CHAIN_BASE_H
+#ifndef CHAIN_BASE_H
 #define CHAIN_BASE_H
 
 #include <iostream>
@@ -14,4 +14,4 @@ template <class T> class Chain_Base{
 
 
 };
-#endif*/
+#endif

@@ -4,11 +4,11 @@
 #include <vector>
 #include <string>
 #include "Card.h"
-#include "Deck.h"
+
 using namespace std;
 
 
-
+class Deck;
 class CardFactory{
 
     private:

@@ -26,11 +26,11 @@ int main()
     // inintlaizing the hands of the two players
     for (int i = 0; i < 5; i++)
     {
-        table.p1.hand.operator+=(table.deck.draw());
-        table.p2.hand.operator+=(table.deck.draw());
+        table.p1.hand.operator+=(table.deck->draw());
+        table.p2.hand.operator+=(table.deck->draw());
     }
 
-    if (!table.deck.deck.empty())
+    if (!table.deck->deck.empty())
     {
         // for each player
 
@@ -41,7 +41,7 @@ int main()
             Player currentPlayer = players[i];
             // dispayign table
             cout << table;
-            currentPlayer.hand.operator+=(table.deck.draw());
+            currentPlayer.hand.operator+=(table.deck->draw());
             if (!table.ta.tradeArea.empty())
             {
                 // add bean to the chain or discard them
@@ -138,7 +138,7 @@ int main()
             // draw three cards from the deck and add them to the trade area
             for (int j = 0; j < 3; j++)
             {
-                table.ta.operator+=(table.deck.draw());
+                table.ta.operator+=(table.deck->draw());
             }
             // if hte top card of hte discard pile matches the esisting
 
@@ -165,7 +165,7 @@ int main()
 
             for (int j = 0; j < 2; j++)
             {
-                currentPlayer.hand.operator+=(table.deck.draw());
+                currentPlayer.hand.operator+=(table.deck->draw());
             }
         }
     }

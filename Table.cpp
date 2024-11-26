@@ -1,5 +1,4 @@
   #include "Table.h"
-
   Table::Table(){
         
         string playerOne;
@@ -12,17 +11,16 @@
         cout << "Player two enter name: ";
         getline(cin, playerTwo);
         p2= Player(playerTwo);
-
-        deck = Deck(); 
+        deck = new Deck();
         dp = DiscardPile(); 
         ta = TradeArea(); 
     }
     bool Table::win(std::string& s){
-    if(deck.deck.size() == 0){
-    if(p1.getName() == s && deck.deck.empty() && p1.getNumCoins() > p2.getNumCoins()){
+    if(deck->deck.empty()){
+    if(p1.getName() == s && p1.getNumCoins() > p2.getNumCoins()){
         return true;
     }
-    else if(p2.getName() == s &&deck.deck.empty() && p1.getNumCoins() < p2.getNumCoins()){
+    else if(p2.getName() == s && p1.getNumCoins() < p2.getNumCoins()){
         return true;
 
     }

@@ -8,9 +8,9 @@ using namespace std;
 
 //The template Chain will have to be instantiated in the program by the concrete derived card classes, e.g., 
 template <class T>
-class Chain : public Chain_Base{
+class Chain {
 
-friend std::ostream& operator<<(std::ostream& out, const Chain_Base& chain) {
+friend std::ostream& operator<<(std::ostream& out, const Chain& chain) {
     if (chain.chain.empty()) {
         out << "Empty";
     } else {

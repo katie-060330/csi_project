@@ -5,6 +5,7 @@
 #include <string>
 #include "Hand.h"
 #include <vector>
+#include "NotEnoughCoins.h"
 
 class Player{
     public: 
