@@ -2,7 +2,7 @@
 
 
 //   DiscardPile::DiscardPile(istream& in, const CardFactory* cardFactory){
-      //TODO ask what the input for the constuctors are becaseu they are all ahinvg the same inputs but it doesnt make any sense to me
+      // TODO ask what the input for the constuctors are becaseu they are all ahinvg the same inputs but it doesnt make any sense to me
    //do a for loop for the amount of lines in in
 /*   for(int i =0; in.gcount; i++){
        Card card = in.getline();

@@ -62,6 +62,7 @@ int main()
                         }
                     }
                 }
+                
                 else
                 {
                     // discard the trade area
