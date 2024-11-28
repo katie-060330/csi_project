@@ -48,7 +48,9 @@
 
     }
     std::ostream& operator<<(std::ostream& out, const TradeArea& tA) {
-        out << "trade Area: ";
+        if(tA.tradeArea.empty()){
+            out<<"empty \n";
+        }
         for(Card* card: tA.tradeArea){
             out<< card->getName() << " , ";
         }

@@ -10,7 +10,7 @@ class Table{
     public:
     Player p1; 
     Player p2; 
-    Deck* deck;
+    Deck deck;
     DiscardPile dp; 
     TradeArea ta;
     Hand* hand;

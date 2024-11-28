@@ -58,6 +58,9 @@
        }
 
          std::ostream& operator<<(std::ostream& os, const DiscardPile& dPile) {
+             if(dPile.discardPile.empty()){
+            os<<"empty \n";
+        }
             for (const Card* card : dPile.discardPile) {
                 os << card->getName() << "\n"; 
             }

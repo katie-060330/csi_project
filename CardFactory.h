@@ -21,7 +21,7 @@ class CardFactory{
     Deck* cardDeck;
     ~CardFactory();
     static CardFactory* getCardFactory();
-    Deck* getDeck();
+    Deck getDeck();
     Card* getCard(string cardType) const;
 };
 

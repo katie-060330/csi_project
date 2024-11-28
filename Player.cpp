@@ -1,6 +1,6 @@
   #include "Player.h"
   Player::Player(){}
-  Player::Player(std::string& n){
+  Player::Player(std::string& n): name(name), hasThirdChain(false){
 
         
         name = n;
@@ -9,6 +9,8 @@
         nonZeroChains = 0;
         hasThirdChain = false; 
         hand = Hand();
+        chains.push_back(Chain<Card*>());
+        chains.push_back(Chain<Card*>());
   
     }
 
