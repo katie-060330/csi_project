@@ -15,7 +15,7 @@ class Player{
     int nonZeroChains; 
     bool hasThirdChain; 
     Hand hand;
-    vector<Chain<Card*>> chains;
+    vector<Chain<Card*> > chains;
     //TODO needs 2 chains 
     Player(); 
     //how do i make a player have a hand of cards

@@ -1,0 +1,38 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [ 
+		"-std=c++11", // Use the C++11 standard
+		"-fdiagnostics-color=always", 
+		"-g", 
+		"/Users/mahreenabbasi/Github/csi_project/main.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Deck.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Hand.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Table.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/TradeArea.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/CardFactory.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Chain.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Card.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/DiscardPile.cpp", 
+		"/Users/mahreenabbasi/Github/csi_project/Player.cpp", 
+		"-o", 
+		"/Users/mahreenabbasi/Github/csi_project/main.exe" 
+     ], 
+     "options": { 
+"cwd": "/Users/mahreenabbasi/Github/csi_project/" 
+     }, 
+     "problemMatcher": [ 
+"$gcc" 
+     ], 
+     "group": { 
+"kind": "build", 
+"isDefault": true 
+     }, 
+     "detail": "Task for building all C++ files." 
+   } 
+ ] 
+} 

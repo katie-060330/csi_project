@@ -1,0 +1,37 @@
+{  
+    "version": "2.0.0",  
+    "tasks": [  
+        {  
+            "type": "cppbuild",  
+            "label": "Build All C++ Files",  
+            "command": "msys64\\ucrt64\\bin\\g++.exe",  
+            "args": [  
+                "-fdiagnostics-color=always",  
+                "-g",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\main.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Deck.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Hand.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Table.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\TradeArea.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\CardFactory.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Chain.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Card.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\DiscardPile.cpp",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\Player.cpp",  
+                "-o",  
+                "Users\\mahreenabbasi\\Github\\csi_project\\csi_project\\main.exe"  
+            ],  
+            "options": {  
+                "cwd": "Users\\mahreenabbasi\\Github\\csi_project\\"  
+            },  
+            "problemMatcher": [  
+                "$gcc"  
+            ],  
+            "group": {  
+                "kind": "build",  
+                "isDefault": true  
+            },  
+            "detail": "Task for building all C++ files."  
+        }  
+    ]  
+}  

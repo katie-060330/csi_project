@@ -9,7 +9,6 @@
         nonZeroChains = 0;
         hasThirdChain = false; 
         hand = Hand();
-        chains = {}; 
   
     }
 

@@ -1,4 +1,4 @@
-#include "DiscardPile.h";
+#include "DiscardPile.h"
 
 
 //   DiscardPile::DiscardPile(istream& in, const CardFactory* cardFactory){
@@ -57,14 +57,11 @@
 
        }
 
-
-          std::ostream& operator<<(ostream& os,const DiscardPile& dPile){
-           const Card* topCard = dPile.top();
-            if(topCard) {
-             os<<*topCard;
+         std::ostream& operator<<(std::ostream& os, const DiscardPile& dPile) {
+            for (const Card* card : dPile.discardPile) {
+                os << card->getName() << "\n"; 
             }
-
-             return os;
+         return os;
 }
 
 

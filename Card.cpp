@@ -10,7 +10,7 @@
 
 
 
-int Blue::getCardsPerCoin(int coins) {
+int Blue::getCardsPerCoin(int coins)  {
     if(coins == 1){return 4; }
            else if (coins == 2){ return 6; }
            else if(coins == 3){ return 8;}
@@ -29,13 +29,13 @@ int Blue::getCoinsPerCard(int cards) {
     }
 
 
-string Blue::getName() {
+string Blue::getName() const {
     return "Blue";
 }
 
 
 
-void Blue::print(ostream& out) {
+void Blue::print(ostream& out) const {
     out << "B";
 }
 
@@ -56,13 +56,13 @@ int Chili::getCoinsPerCard(int cards) {
             else{throw std::invalid_argument( "Only 18 Chili cards in deck" );}
     }
 
-string Chili::getName() {
+string Chili::getName() const {
     return "Chili";
 }
 
 
 
-void Chili::print(ostream& out) {
+void Chili::print(ostream& out)const {
     out << "C";
 }
 
@@ -84,13 +84,13 @@ int Stink::getCoinsPerCard(int cards) {
             else{throw std::invalid_argument( "Only 16 stink cards in deck" );}
     }
 
-string Stink::getName() {
+string Stink::getName()const{
     return "Stink";
 }
 
 
 
-void Stink::print(ostream& out) {
+void Stink::print(ostream& out) const {
     out << "S";
 }
 
@@ -113,11 +113,11 @@ int Green::getCoinsPerCard(int cards) {
             else{throw std::invalid_argument( "Only 14 green cards in deck" );}
     }
 
-string Green::getName(){
+string Green::getName()const{
         return "Green";
    }
 
-void Green::print(ostream& out){
+void Green::print(ostream& out)const{
     out<<"G";
 
    }
@@ -140,11 +140,11 @@ void Green::print(ostream& out){
        else{throw std::invalid_argument( "Only 12 soy cards in deck" );}
        }
 
-   string Soy::getName(){
+   string Soy::getName()const{
            return "Soy";
       }
 
-   void Soy::print(ostream& out){ //?
+   void Soy::print(ostream& out) const{ //?
        out<<"s";
 
       }
@@ -166,13 +166,13 @@ void Green::print(ostream& out){
                    else{throw std::invalid_argument( "Only 10 Black cards in deck & there cant be negatives" );}
            }
 
-    string Black::getName() {
+    string Black::getName() const{
         return "Black";
     }
 
 
 
-    void Black::print(ostream& out) {
+    void Black::print(ostream& out)const {
         out << "b";
     }
 
@@ -194,13 +194,13 @@ void Green::print(ostream& out){
                            else{throw std::invalid_argument( "Only 10 Black cards in deck & there cant be negatives" );}
                    }
 
-        string Red::getName() {
+        string Red::getName() const{
             return "Red";
         }
 
 
 
-        void Red::print(ostream& out) {
+        void Red::print(ostream& out) const{
             out << "R";
         }
 
@@ -223,13 +223,13 @@ void Green::print(ostream& out){
     }
 
 
-            string Garden::getName() {
+            string Garden::getName() const{
                 return "Garden";
             }
 
 
 
-            void Garden::print(ostream& out) {
+            void Garden::print(ostream& out) const{
                 out << "g";
             }
 
