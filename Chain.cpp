@@ -10,18 +10,18 @@ using namespace std;
 template <class T>
 class Chain {
 
-friend std::ostream& operator<<(std::ostream& out, const Chain& chain) {
-    if (chain.chain.empty()) {
-        out << "Empty";
-    } else {
-    //prints type of car
-        out << chain.chain.front()->getName() << "\t";
-        //prints every card initial
-        for (const T* card : chain.chain) {
-            card->print(out);
-            out<<" ";
+/*friend std::ostream& operator<<(std::ostream& out, const Chain& chain) {
+        if (chain.chain.empty()) {
+            out << "Empty";
+        } else {
+            // Prints type of car
+            out << chain.chain.front()->getName() << "\t";
+            // Prints every card initial
+            for (const T* card : chain.chain) {
+                card->print(out);
+                out << " ";
+            }
         }
-    }
-    return out;
-}
+        return out;
+    }*/
 };

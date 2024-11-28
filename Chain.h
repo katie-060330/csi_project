@@ -69,9 +69,22 @@ public:
         }
         return chain.at(0);
     }
-
+friend std::ostream &operator<<(std::ostream &out, const Chain<T> &chain) {
+        if (chain.chain.empty()) {
+            out << "Empty";
+        } else {
+            // Prints type of the card
+            out << chain.chain.front()->getName() << "\t";
+            // Prints every card in the chain
+            for (const auto &card : chain.chain) {
+                card->print(out);
+                out << " ";
+            }
+        }
+        return out;
+    }
 private:
     vector<T> chain;
+   
 
-    friend std::ostream &operator<<(std::ostream &output, const Chain<Card *> &chain);
 };
